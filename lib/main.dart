@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 void main() {
   runApp(
@@ -16,24 +17,49 @@ class Home extends StatelessWidget {
     return Scaffold(
 
         appBar : AppBar( 
-          title : const Text( "My first app" ) ,
+          title : const Text( "My first app" ),
           centerTitle: true ,
-          backgroundColor: Colors.greenAccent ,
+          backgroundColor: Colors.greenAccent,
         ),
 
-        body : const Center(
-            child : Image(
-              //image : NetworkImage('https://images.unsplash.com/photo-1534521575248-b96c05f8b304?q=80&w=2564&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')
-              image : AssetImage('images/dog.jpg')
-            ) ,
-        ) ,
+        body : Column(
+          mainAxisAlignment: MainAxisAlignment.end,
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: [
 
-        floatingActionButton : FloatingActionButton(
+            Row(
+              children: [
+                const Text( 'hello, ' ),
+                const Text( 'World' ),
+              ],
+            ),
+
+            Container(
+              padding: EdgeInsets.all(20),
+              color: Colors.cyan,
+              child: const Text( "One" ),
+            ),
+
+            Container(
+              padding: EdgeInsets.all( 30 ),
+              color: Colors.yellow,
+              child: const Text( "Two" ),
+            ),
+
+            Container(
+              padding: EdgeInsets.all( 40 ),
+              color: Colors.green,
+              child: const Text( "Three" ),
+            ),
+          ],
+        ),
+
+        floatingActionButton: FloatingActionButton(
           onPressed: () {},
           backgroundColor: Colors.greenAccent,
-          child : const Text( "click" ) ,
-        ) ,
-    ) ;
+          child: const Text( "click" ),
+        ),
+    );
   }
 }
 
